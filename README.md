@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">HolbertonBnB</h1>
-<p align="center">An AirBnB clone.</p>
+<h3 align="center">An AirBnB clone.</h3>
 
 <p align="center">
   <img src="https://github.com/yassine4real/AirBnB_clone/blob/master/pipeline.png" alt="HolbertonBnB logo">
