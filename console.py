@@ -8,6 +8,7 @@ import re
 from shlex import split
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 def parse(arg):
@@ -75,11 +76,7 @@ class HBNBCommand(cmd.Cmd):
         """
         return True 
     
-    def do_EOF(self, line):
-        """EOF signal to exit the program
-        """
-        print("")
-        return True 
+    do_EOF = do_quit
     
     def do_create(self, arg):
         """Usage: create <class>
