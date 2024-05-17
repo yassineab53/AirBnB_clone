@@ -50,3 +50,4 @@ class BaseModel:
         return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
     
 
+
