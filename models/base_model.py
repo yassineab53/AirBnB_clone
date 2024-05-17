@@ -23,8 +23,8 @@ class BaseModel:
                     self.__dict__[k] = datetime.strptime(v, tform)
                 else:
                     self.__dict__[k] = v
-         else:
-             storage.new(self)
+        else:
+            storage.new(self)
     
     def save(self):
         """Update updated_at with the current datetime."""
