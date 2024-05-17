@@ -12,8 +12,9 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = "(hbnb) "
 
-    # def __init__(self):
-    #     super().__init__()
+    def emptyline(self):
+        """Do nothing upon receiving an empty line."""
+        pass
     
     def do_quit(self, arg):
         """Quit command to exit the program
