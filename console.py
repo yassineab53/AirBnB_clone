@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the HBnB console."""
 
-import cmd 
+import cmd
 import json
 import os
 import re
@@ -33,8 +33,10 @@ def parse(arg):
         retl.append(curly_braces.group())
         return retl
 
+
 class HBNBCommand(cmd.Cmd):
     """Defines the HolbertonBnB command interpreter.
+
     Attributes:
         prompt (str): The command prompt.
     """
@@ -52,9 +54,9 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Do nothing upon receiving an empty line."""
         pass
-    
+
     def default(self, arg):
-        """Default behavior for cmd module when input is invalid"""
+        """Default behavior for cmd module when input is invalid."""
         argdict = {
             "all": self.do_all,
             "show": self.do_show,
@@ -74,15 +76,12 @@ class HBNBCommand(cmd.Cmd):
         print("*** Unknown syntax: {}".format(arg))
         return False
 
-
-    
     def do_quit(self, arg):
-        """Quit command to exit the program
-        """
-        return True 
-    
+        """Quit command to exit the program."""
+        return True
+
     do_EOF = do_quit
-    
+
     def do_create(self, arg):
         """Usage: create <class>
         Create a new class instance and print its id.
@@ -95,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(eval(argl[0])().id)
             storage.save()
-    
+
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
         Display the string representation of a class instance of a given id.
@@ -145,7 +144,7 @@ class HBNBCommand(cmd.Cmd):
                 elif len(argl) == 0:
                     objl.append(obj.__str__())
             print(objl)
-        
+
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
@@ -155,7 +154,7 @@ class HBNBCommand(cmd.Cmd):
             if argl[0] == obj.__class__.__name__:
                 count += 1
         print(count)
-    
+
     def do_update(self, arg):
         """Usage: update <class> <id> <attribute_name> <attribute_value> or
        <class>.update(<id>, <attribute_name>, <attribute_value>) or
@@ -204,7 +203,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[k] = v
         storage.save()
-    
 
 
 if __name__ == "__main__":
